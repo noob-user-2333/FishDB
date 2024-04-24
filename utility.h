@@ -1,28 +1,27 @@
 //
-// Created by user on 4/8/24.
+// Created by user on 4/22/24.
 //
 
-#ifndef FISHDB_UTILITY_H
-#define FISHDB_UTILITY_H
-
-#include <cassert>
+#ifndef STORAGE_UTILITY_H
+#define STORAGE_UTILITY_H
 #include <cstring>
+#include <cassert>
+#include <memory>
 #include <string>
-#include <vector>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <map>
-#include <unordered_map>
-#include <set>
-#include <unordered_set>
+#include <filesystem>
+#include <exception>
+#include  <stdexcept>
+#include <cstdio>
 #include <list>
 
-namespace ErrorCode {
-    static constexpr int UnknownError = -1;
+struct ErrorCode{
     static constexpr int Success = 0;
-}
 
 
-#endif //FISHDB_UTILITY_H
+};
+
+
+
+
+
+#endif //STORAGE_UTILITY_H

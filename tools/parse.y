@@ -27,9 +27,9 @@ sql ::= insert_statement KW_END .
 insert_statement ::= KW_INSERT KW_INTO KW_ID KW_VALUES KW_LB value_list KW_RB.
 value_list ::= value.
 value_list ::= value_list KW_COMMA value.
-value ::= KW_NUM_INT.
-value ::= KW_NUM_DOUBLE.
-value ::= KW_STRING.
+value(A) ::= KW_NUM_INT(B). {A = B;}
+value(A) ::= KW_NUM_DOUBLE(B).{A = B;}
+value(A) ::= KW_STRING(B).{A = B;}
 
 //select
 sql ::= select_statement KW_END.
@@ -61,7 +61,7 @@ compare_symbols ::= KW_LESS.
 compare_symbols ::= KW_LEQ.
 
 compute_item ::= KW_ID.
-compute_item ::= value.
+compute_item ::= value(A). {printf("type is %d",A->type);}
 compute_item ::= KW_LB compute_exp KW_RB.
 
 

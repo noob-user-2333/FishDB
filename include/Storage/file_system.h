@@ -74,6 +74,7 @@ public:
 class FileSystem {
 public:
     static FileSystem& Get();
+    FileSystem() = default;
     FileSystem(const FileSystem &) = delete;
     virtual std::unique_ptr <FileHandle> OpenFile(const std::string &path,int64_t flags);
 
